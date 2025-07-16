@@ -1,32 +1,33 @@
 #include <iostream>
-using namespace std;
+#include <cctype>
+using std::cout;
+using std::endl;
 
-void	print_str(char *str)
+void	print_str(const char *str)
 {
 	while (*str)
 	{
-		if (*str >= 97 && *str <= 122)
-			*str -= 32;
-		cout << *str;
+		if (islower(*str))
+			cout << (char)toupper(*str);
+		else
+			cout << *str;
 		str++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 0;
 	if (argc == 1)
 		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
  	else
 	{
-		while (++i < argc)
+		for (int i = 1; i < argc; ++i)
 		{
 			print_str(argv[i]);
-			if (i < argc)
+			if (i < argc - 1)
 				cout << " ";
 		}
 	}
        	cout << endl;
+	return (0);
 }
