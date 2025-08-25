@@ -1,16 +1,14 @@
 #include <iostream>
 #include <cctype>
-using std::cout;
-using std::endl;
 
 void	print_str(const char *str)
 {
 	while (*str)
 	{
 		if (islower(*str))
-			cout << (char)toupper(*str);
+			std::cout << (char)toupper(*str);
 		else
-			cout << *str;
+			std::cout << *str;
 		str++;
 	}
 }
@@ -18,16 +16,16 @@ void	print_str(const char *str)
 int	main(int argc, char **argv)
 {
 	if (argc == 1)
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
  	else
 	{
 		for (int i = 1; i < argc; ++i)
 		{
 			print_str(argv[i]);
 			if (i < argc - 1)
-				cout << " ";
+				std::cout << " ";
 		}
 	}
-       	cout << endl;
+	std::cout << std::endl;
 	return (0);
 }
