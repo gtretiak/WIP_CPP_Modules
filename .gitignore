@@ -1,0 +1,18 @@
+# C++ compiled objects and executables
+*.o
+*.obj
+*.exe
+megaphone
+runPhoneBook
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Build directories
+build/
