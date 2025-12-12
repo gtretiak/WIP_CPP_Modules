@@ -1,26 +1,31 @@
-#include "PhoneBook.hpp"
-#include "Contact.hpp"
+#include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
+#define PROMPT "Enter one of these commands: ADD, SEARCH, EXIT.\n"
 
 int	main(void)
 {
 	std::string	input;
-	PhoneBook::PhoneBook{};
+	PhoneBook	PhoneBook;
 
 	while (1)
 	{
-		std::cout << INITIAL_PROMPT;
+		std::cout << PROMPT;
 		std::cin >> input;
-		if (input == "ADD")
+		if (std::cin.eof())
+			exit(1);
+		else if (input == "ADD")
 		{
-			std::cout << "do add" << input.size() << std::endl;
+			PhoneBook.addContact();
 		}
 		else if (input == "SEARCH")
 		{
-			std::cout << std::right << "do search"
-			<< std::setw(10) << "test" << std::endl;
+			PhoneBook.searchContact();
+			std::cout << std::setw(10) << "test" << std::endl;
 		}
 		else if (input == "EXIT")
-			~PhoneBook; // destruct?
+			PhoneBook.terminateProgram();
+		else
+			std::cout << "Invalid command." << std::endl;
 	}
 	return (0);
 }

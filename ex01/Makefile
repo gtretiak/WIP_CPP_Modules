@@ -1,6 +1,6 @@
 FLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = runPhoneBook
-SRC = myPhoneBook.cpp
+SRC = main.cpp PhoneBook.class.cpp Contact.class.cpp
 OBJS = $(addprefix ./, $(SRC:.cpp=.o))
 
 all: $(NAME)

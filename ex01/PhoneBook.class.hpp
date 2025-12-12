@@ -1,15 +1,26 @@
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
 
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include "Contact.class.hpp"
+#define FNAME "first name"
+#define LNAME "last name"
+#define NNAME "nickname"
+#define PHONE "phone number"
+#define SECRET "darkest secret"
+
 class	PhoneBook {
 	public:
-		addContact(void);
-		searchContact(void);
+		PhoneBook(void);
+		void	addContact(void);
+		void	searchContact(void);
+		void	terminateProgram(void);
+		~PhoneBook(void);
 	private:
-		std::string[8]	contacts;
-		int		counter;
+		Contact	_contacts[8];
+		int		_counter;
 };
-
-# define INITIAL_PROMPT "Enter one of the three commands: ADD, SEARCH, EXIT: "
 
 #endif
