@@ -7,7 +7,7 @@
 
 class	Contact {
 	public:
-		Contact(void);
+		Contact(void); // do I need a constructor?
 		std::string	getFirst(void);
 		std::string	getLast(void);
 		std::string	getNick(void);
@@ -18,7 +18,7 @@ class	Contact {
 		void	setNick(std::string);
 		void	setPhone(std::string);
 		void	setSecret(std::string);
-		~Contact(void);
+		~Contact(void); // do I need a destructor?
 	private:
 		std::string	_firstName;
 		std::string	_lastName;

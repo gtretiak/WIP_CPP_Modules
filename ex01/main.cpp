@@ -1,29 +1,29 @@
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
+
 #define PROMPT "Enter one of these commands: ADD, SEARCH, EXIT.\n"
 
 int	main(void)
 {
 	std::string	input;
-	PhoneBook	PhoneBook;
+	PhoneBook	PB;
 
 	while (1)
 	{
 		std::cout << PROMPT;
-		std::cin >> input;
+		std::cin >> input; // or use getline?
 		if (std::cin.eof())
 			exit(1);
 		else if (input == "ADD")
 		{
-			PhoneBook.addContact();
+			PB.addContact(); // add check for invalid insertion?
 		}
 		else if (input == "SEARCH")
 		{
-			PhoneBook.searchContact();
-			std::cout << std::setw(10) << "test" << std::endl;
+			PB.searchContact();
 		}
 		else if (input == "EXIT")
-			PhoneBook.terminateProgram();
+			PB.terminateProgram();
 		else
 			std::cout << "Invalid command." << std::endl;
 	}
