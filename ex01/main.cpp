@@ -11,7 +11,7 @@ int	main(void)
 	while (1)
 	{
 		std::cout << PROMPT;
-		std::cin >> input; // or use getline?
+		getline(std::cin, input);
 		if (std::cin.eof())
 			exit(1);
 		else if (input == "ADD")

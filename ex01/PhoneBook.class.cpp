@@ -7,7 +7,7 @@ PhoneBook::PhoneBook(void):_counter(0){} // Is it initialization? Construction!
 static void	processField(std::string field, Contact contact) {
 	std::string	var;
 	std::cout << "Enter the " << field << ": ";
-	std::cin >> var; // or is it better to use getline?
+	getline(std::cin, var);
 	if (std::cin.eof())
 		exit(1); // do I need to throw an error message?
 	if (field == FNAME)
