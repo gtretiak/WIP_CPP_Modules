@@ -27,7 +27,9 @@ int     main(void)
                 }
                 else if (input == "SEARCH")
                 {
-                        PB.searchContact();
+                        if (PB.searchContact())
+                                std::cout << "The index of the entry to display is out of range. " <<
+                                        "Back to the main menu..." << std::endl;
                 }
                 else if (input == "EXIT")
                         PB.terminateProgram();

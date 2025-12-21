@@ -85,10 +85,11 @@ static std::string	getData(const std::string &data)
 		return (data);
 }
 
-void	PhoneBook::searchContact(void) {
-	std::cout << std::setw(10) << "Index | ";
-	std::cout << std::setw(10) << "First name | ";
-	std::cout << std::setw(10) << "Last name | ";
+int	PhoneBook::searchContact(void) {
+	int	index;
+	std::cout << std::setw(10) << "Index" << " | ";
+	std::cout << std::setw(10) << "First name" << " | ";
+	std::cout << std::setw(10) << "Last name" << " | ";
 	std::cout << std::setw(10) << "Nickname" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	for (int i = 0; i < _counter; i++)
@@ -98,7 +99,16 @@ void	PhoneBook::searchContact(void) {
 		std::cout << std::setw(10) << getData(_contacts[i].getLast()) << " | ";
 		std::cout << std::setw(10) << getData(_contacts[i].getNick()) << std::endl;
 	}
-	return ;
+	std::cout << "Enter the index of the entry to display: ";
+	std::cin >> index; //should I handle EoF?
+	if (index < 1 || index > _counter + 1)
+	       return (1);
+	std::cout << _contacts[index - 1].getFirst() << std::endl;
+	std::cout << _contacts[index - 1].getLast() << std::endl;
+	std::cout << _contacts[index - 1].getNick() << std::endl;
+	std::cout << _contacts[index - 1].getPhone() << std::endl;
+	std::cout << _contacts[index - 1].getSecret() << std::endl;
+	return (0);
 }
 
 void	PhoneBook::terminateProgram(void) {
