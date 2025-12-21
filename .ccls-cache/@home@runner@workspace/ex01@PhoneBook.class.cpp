@@ -86,10 +86,10 @@ static std::string	getData(const std::string &data)
 }
 
 void	PhoneBook::searchContact(void) {
-	std::cout << std::setw(10) << "Index | " <<
-		"First name | " << 
-		"Last name | " <<
-		"Nickname" << std::endl;
+	std::cout << std::setw(10) << "Index | ";
+	std::cout << std::setw(10) << "First name | ";
+	std::cout << std::setw(10) << "Last name | ";
+	std::cout << std::setw(10) << "Nickname" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 	for (int i = 0; i < _counter; i++)
 	{
