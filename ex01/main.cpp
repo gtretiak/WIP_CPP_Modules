@@ -13,10 +13,17 @@ int	main(void)
 		std::cout << PROMPT;
 		getline(std::cin, input);
 		if (std::cin.eof())
+		{
+			std::cout << "Ctrl+D has pressed (EoF). Exit with code 1." << std::endl;
 			exit(1);
+		}
 		else if (input == "ADD")
 		{
-			PB.addContact(); // add check for invalid insertion?
+			if (PB.addContact())
+				std::cout << "Contact can’t have empty fields. Not saved. " <<
+					"Back to the main menu..." << std::endl;
+			else
+				std::cout << "Back to the main menu." << std::endl;
 		}
 		else if (input == "SEARCH")
 		{
@@ -24,8 +31,6 @@ int	main(void)
 		}
 		else if (input == "EXIT")
 			PB.terminateProgram();
-		else
-			std::cout << "Invalid command." << std::endl;
 	}
 	return (0);
 }
