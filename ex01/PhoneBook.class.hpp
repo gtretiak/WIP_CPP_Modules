@@ -21,7 +21,7 @@ class	PhoneBook {
 		PhoneBook(void); // do I need a constructor?
 				 // do I need get_count?
 		int	addContact(void);
-		void	searchContact(void);
+		int	searchContact(void);
 		void	terminateProgram(void);
 		~PhoneBook(void); // do I need a destructor?
 	private:
