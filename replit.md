@@ -1,31 +1,51 @@
-# C++ Exercises Project
+# C++ Phone Book Project
 
 ## Overview
-This is a C++ learning project containing exercises for practicing C++ fundamentals. It uses the C++98 standard and is compiled with clang/g++.
+This is a C++ project with two exercises:
+- **ex00**: Simple megaphone program that converts input to uppercase
+- **ex01**: PhoneBook application with contact management (ADD, SEARCH, EXIT commands)
 
 ## Project Structure
-- `ex00/` - Megaphone exercise (converts input to uppercase)
-- `ex01/` - PhoneBook exercise (work in progress, has compile issues)
-
-## Building and Running
-
-### ex00 - Megaphone
-```bash
-cd ex00
-make        # Build
-./megaphone "your text here"  # Run
-make re     # Rebuild from scratch
-make clean  # Remove object files
-make fclean # Remove object files and executable
+```
+.
+├── ex00/
+│   ├── Makefile
+│   └── megaphone.cpp
+├── ex01/
+│   ├── Makefile
+│   ├── main.cpp
+│   ├── PhoneBook.class.hpp
+│   ├── PhoneBook.class.cpp
+│   ├── Contact.class.hpp
+│   └── Contact.class.cpp
+└── .gitignore
 ```
 
-### ex01 - PhoneBook (incomplete)
-The PhoneBook exercise has incomplete code and compilation issues that need to be resolved.
+## Build System
+- Uses GNU Make with C++98 standard
+- Compile flags: `-Wall -Wextra -Werror -std=c++98`
+- Each exercise has its own Makefile with `make`, `make clean`, `make fclean`, and `make re` targets
 
-## Recent Changes
-- 2025-12-12: Initial import to Replit, set up C++ toolchain and workflow
+## Current Workflow
+- **Name**: Build and Run
+- **Command**: `cd ex00 && make re && ./megaphone "Hello from Replit!"`
+- **Output Type**: Console
+- **Status**: Configured and working
 
-## Development
-- Language: C++ (C++98 standard)
-- Compiler flags: `-Wall -Wextra -Werror -std=c++98`
-- Build system: Makefile
+## Key Features (ex01)
+- Add contacts with: first name, last name, nickname, phone number, darkest secret
+- Store up to 8 contacts with overwrite protection
+- Search contacts with formatted table display
+- Display full contact details when selected
+
+## Recent Fixes
+1. Fixed contact data not being saved (passed by reference instead of by value)
+2. Corrected loop condition for displaying contacts
+3. Fixed substring syntax in getData()
+4. Aligned header and data columns with proper setw() formatting
+5. Fixed input buffer issue with std::cin.ignore() after reading index
+
+## Notes
+- ex01 requires full program interaction (uses std::cin for user input)
+- Contact data truncated to 10 characters in display (with dot indicator if longer)
+- Program uses C++98 standard as per assignment requirements
