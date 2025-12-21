@@ -4,7 +4,7 @@ PhoneBook::PhoneBook(void):_counter(0){} // Is it initialization? Construction!
 
 // Do I need getCount?
 
-static int	processField(std::string field, Contact contact) {
+static int	processField(std::string field, Contact &contact) {
 	std::string	var;
 	std::cout << "Enter the " << field << ": ";
 	getline(std::cin, var);
@@ -80,7 +80,7 @@ int	PhoneBook::addContact(void) { //member fucntion
 static std::string	getData(const std::string &data)
 {
 	if (data.length() > 10)
-		return (data.substr(0-9) + '.');
+		return (data.substr(0, 9) + ".");
 	else
 		return (data);
 }
@@ -90,7 +90,8 @@ void	PhoneBook::searchContact(void) {
 		"First name | " << 
 		"Last name | " <<
 		"Nickname" << std::endl;
-	for (int i = 0; i <= _counter; i++)
+	std::cout << "---------------------------------------------" << std::endl;
+	for (int i = 0; i < _counter; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << " | ";
 		std::cout << std::setw(10) << getData(_contacts[i].getFirst()) << " | ";
