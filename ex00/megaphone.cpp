@@ -6,9 +6,9 @@ void	print_str(const char *str)
 	while (*str)
 	{
 		if (islower(*str))
-			std::cout << (char)toupper(*str);
+			std::cout << "\033[32m" << (char)toupper(*str);
 		else
-			std::cout << *str;
+			std::cout << "\033[32m" << *str;
 		str++;
 	}
 }
@@ -16,7 +16,7 @@ void	print_str(const char *str)
 int	main(int argc, char **argv)
 {
 	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		std::cout << "\033[31m* LOUD AND UNBEARABLE FEEDBACK NOISE *\033[0m";
  	else
 	{
 		for (int i = 1; i < argc; ++i)
