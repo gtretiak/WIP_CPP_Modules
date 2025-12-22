@@ -1,1 +1,5 @@
-int
+#include ""
+
+int	main(void)
+{
+}
