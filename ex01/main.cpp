@@ -1,7 +1,7 @@
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
 
-#define PROMPT "Enter one of these commands: ADD, SEARCH, EXIT.\n"
+#define PROMPT "\033[32mEnter one of these commands: ADD, SEARCH, EXIT.\n\033[0m"
 
 int	main(void)
 {
@@ -14,25 +14,25 @@ int	main(void)
 		getline(std::cin, input);
 		if (std::cin.eof())
 		{
-			std::cout << "Ctrl+D has pressed (EoF). Exit with code 1." << std::endl;
+			std::cout << "\033[31mCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
 			exit(1);
 		}
 		else if (input == "ADD")
 		{
 			if (PB.addContact())
-				std::cout << "Contact can’t have empty fields. Not saved. " <<
-					"Back to the main menu..." << std::endl;
+				std::cout << "\033[31mContact can’t have empty fields. Not saved. " <<
+					"Back to the main menu...\033[0m" << std::endl;
 			else
-				std::cout << "Back to the main menu." << std::endl;
+				std::cout << "\033[32mBack to the main menu.\033[0m" << std::endl;
 		}
 		else if (input == "SEARCH")
 		{
 			if (PB.searchContact())
-				std::cout << "The index of the entry to display is out of range." <<
-					"Back to the main menu..." << std::endl;
+				std::cout << "\033[31mThe index of the entry to display is out of range." <<
+					" Back to the main menu...\033[0m" << std::endl;
 		}
 		else if (input == "EXIT")
-			PB.terminateProgram();
+			break ;
 		else
 			continue ;
 	}

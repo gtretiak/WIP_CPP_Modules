@@ -1,25 +1,25 @@
 #include "PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook(void):_counter(0){} // Is it initialization? Construction!
-
-// Do I need getCount?
+PhoneBook::PhoneBook(void):_pbSize(0), _index(0) {
+	std::cout << "\033[36mPB constructor is called.\033[0m" << std::endl;
+} // Member initialization during construction
 
 static int	processField(std::string field, Contact &contact) {
 	std::string	var;
-	std::cout << "Enter the " << field << ": ";
+	std::cout << "\033[32mEnter the " << field << ": \033[0m";
 	getline(std::cin, var);
 	if (std::cin.eof())
 	{
-		std::cout << "Ctrl+D has pressed (EoF). Exit with code 1." << std::endl;
+		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
 		exit(1);
 	}
 	if (var.empty())
 	{
-		std::cout << "A saved contact can't have empty fields. Try one more time. Enter the " << field << ": ";
+		std::cout << "\033[33mA saved contact can't have empty fields. Try one more time.\033[32m Enter the " << field << ": \033[0m";
 		getline(std::cin, var);
 		if (std::cin.eof())
 		{
-			std::cout << "Ctrl+D has pressed (EoF). Exit with code 1." << std::endl;
+			std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
 			exit(1);
 		}
 	}
@@ -53,26 +53,33 @@ int	PhoneBook::addContact(void) { //member fucntion
 		return (1);
 	if (processField(SECRET, contact))
 		return (1);
-	if (_counter < 8)
+	if (_index < 8)
 	{
-		this->_contacts[_counter] = contact;
-		_counter++;
-		// do I need an index here?
+		this->_contacts[_index] = contact;
+		_index++;
+		if (_pbSize < 8)
+			_pbSize++;
 	}
 	else
 	{
 		if (!overwritten)
 		{
-			std::cout << "Attention! Phone book is full. " <<
+			std::cout << "\033[33mAttention! Phone book is full. " <<
 				"This and upcoming contacts will overwrite existing ones." <<
-				" Do you want to proceed? [y/n]: ";
+				" Do you want to proceed? [y/n]: \033[0m";
 			std::cin >> c;
+			if (std::cin.eof())
+			{
+				std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
+				exit(1);
+			}
+			std::cin.ignore();
 			if (c == 'n')
 				return (0);
 		}
-		_counter = 0;
-		this->_contacts[_counter] = contact;
-		_counter++;
+		_index = 0;
+		this->_contacts[_index] = contact;
+		_index++;
 	}
 	return (0);
 }
@@ -87,35 +94,36 @@ static std::string	getData(const std::string &data)
 
 int	PhoneBook::searchContact(void) {
 	int	index;
-	std::cout << std::setw(10) << "Index" << " | ";
+	std::cout << "\033[32m" << std::setw(10) << "Index" << " | ";
 	std::cout << std::setw(10) << "First name" << " | ";
 	std::cout << std::setw(10) << "Last name" << " | ";
 	std::cout << std::setw(10) << "Nickname" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
-	for (int i = 0; i < _counter; i++)
+	for (int i = 0; i < _pbSize; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << " | ";
 		std::cout << std::setw(10) << getData(_contacts[i].getFirst()) << " | ";
 		std::cout << std::setw(10) << getData(_contacts[i].getLast()) << " | ";
 		std::cout << std::setw(10) << getData(_contacts[i].getNick()) << std::endl;
 	}
-	std::cout << "Enter the index of the entry to display: ";
-	std::cin >> index; //should I handle EoF?
+	std::cout << "Enter the index of the entry to display: \033[0m";
+	std::cin >> index;
+	if (std::cin.eof())
+	{
+		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
+		exit(1);
+	}
 	std::cin.ignore();
-	if (index < 1 || index > _counter)
+	if (index < 1 || index > _pbSize)
 	       return (1);
-	std::cout << std::endl << FNAME << ": " << _contacts[index - 1].getFirst() << std::endl;
+	std::cout << std::endl << "\033[35m" << FNAME << ": " << _contacts[index - 1].getFirst() << std::endl;
 	std::cout << LNAME << ": " << _contacts[index - 1].getLast() << std::endl;
 	std::cout << NNAME << ": " << _contacts[index - 1].getNick() << std::endl;
 	std::cout << PHONE << ": " << _contacts[index - 1].getPhone() << std::endl;
-	std::cout << SECRET << ": " << _contacts[index - 1].getSecret() << std::endl << std::endl;
+	std::cout << SECRET << ": " << _contacts[index - 1].getSecret() << "\033[0m" << std::endl << std::endl;
 	return (0);
 }
 
-void	PhoneBook::terminateProgram(void) {
-	exit(0);
-}
-
 PhoneBook::~PhoneBook(void) {
-	std::cout << "Destructor is called." << std::endl;
+	std::cout << "\033[36mPB destructor is called.\033[0m" << std::endl;
 }

@@ -4,10 +4,6 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-//#include <cstdio> - do I need this?
-//#include <limits> - do I need this?
-//#include <sstream> - do I need this?
-//#include <cstdlib> - do I need this?
 #include "Contact.class.hpp"
 
 #define FNAME "first name"
@@ -18,15 +14,14 @@
 
 class	PhoneBook {
 	public:
-		PhoneBook(void); // do I need a constructor?
-				 // do I need get_count?
+		PhoneBook(void);
 		int	addContact(void);
 		int	searchContact(void);
-		void	terminateProgram(void);
-		~PhoneBook(void); // do I need a destructor?
+		~PhoneBook(void);
 	private:
 		Contact	_contacts[8];
-		int		_counter; // do I need an index as well?
+		int		_pbSize;
+		int		_index;
 };
 
 #endif
