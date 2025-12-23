@@ -16,10 +16,11 @@ class	PhoneBook {
 	public:
 		PhoneBook(void);
 		int	addContact(void);
-		int	searchContact(void);
+		int	searchContact(void) const;
 		~PhoneBook(void);
 	private:
-		Contact	_contacts[8];
+		static const int	CAPACITY = 8;
+		Contact	_contacts[CAPACITY];
 		int		_pbSize;
 		int		_index;
 };

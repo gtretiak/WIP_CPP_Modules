@@ -1,16 +1,11 @@
 #include <iostream>
 #include <cctype>
 
-void	print_str(const char *str)
+static void	print_str(std::string s)
 {
-	while (*str)
-	{
-		if (islower(*str))
-			std::cout << "\033[32m" << (char)toupper(*str);
-		else
-			std::cout << "\033[32m" << *str;
-		str++;
-	}
+	for (int i = 0; i < s.length(); i++)
+		s[i] = std::toupper(s[i]);
+	std::cout << "\033[32m" << s;
 }
 
 int	main(int argc, char **argv)
@@ -21,7 +16,8 @@ int	main(int argc, char **argv)
 	{
 		for (int i = 1; i < argc; ++i)
 		{
-			print_str(argv[i]);
+			std::string	s(argv[i]);
+			print_str(s);
 			if (i < argc - 1)
 				std::cout << " ";
 		}

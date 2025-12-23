@@ -8,16 +8,16 @@
 class	Contact {
 	public:
 		Contact(void);
-		std::string	getFirst(void);
-		std::string	getLast(void);
-		std::string	getNick(void);
-		std::string	getPhone(void);
-		std::string	getSecret(void);
-		void	setFirst(std::string);
-		void	setLast(std::string);
-		void	setNick(std::string);
-		void	setPhone(std::string);
-		void	setSecret(std::string);
+		std::string	getFirst(void) const;
+		std::string	getLast(void) const;
+		std::string	getNick(void) const;
+		std::string	getPhone(void) const;
+		std::string	getSecret(void) const;
+		void	setFirst(const std::string &var);
+		void	setLast(const std::string &var);
+		void	setNick(const std::string &var);
+		void	setPhone(const std::string &var);
+		void	setSecret(const std::string &var);
 		~Contact(void);
 	private:
 		std::string	_firstName;

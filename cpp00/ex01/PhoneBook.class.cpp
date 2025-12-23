@@ -53,11 +53,11 @@ int	PhoneBook::addContact(void) { //member fucntion
 		return (1);
 	if (processField(SECRET, contact))
 		return (1);
-	if (_index < 8)
+	if (_index < CAPACITY)
 	{
 		this->_contacts[_index] = contact;
 		_index++;
-		if (_pbSize < 8)
+		if (_pbSize < CAPACITY)
 			_pbSize++;
 	}
 	else
@@ -92,7 +92,7 @@ static std::string	getData(const std::string &data)
 		return (data);
 }
 
-int	PhoneBook::searchContact(void) {
+int	PhoneBook::searchContact(void) const {
 	int	index;
 	std::cout << "\033[32m" << std::setw(10) << "Index" << " | ";
 	std::cout << std::setw(10) << "First name" << " | ";

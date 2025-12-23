@@ -4,43 +4,43 @@ Contact::Contact(void) {
 	std::cout << "\033[36mContact constructor is called.\033[0m" << std::endl;
 }
 
-std::string	Contact::getFirst(void) {
+std::string	Contact::getFirst(void) const {
 	return _firstName;
 }
 
-std::string	Contact::getLast(void) {
+std::string	Contact::getLast(void) const {
 	return _lastName;
 }
 
-std::string	Contact::getNick(void) {
+std::string	Contact::getNick(void) const {
 	return _nickName;
 }
 
-std::string	Contact::getPhone(void) {
+std::string	Contact::getPhone(void) const {
 	return _phoneNumber;
 }
 
-std::string	Contact::getSecret(void) {
+std::string	Contact::getSecret(void) const {
 	return _darkestSecret;
 }
 
-void	Contact::setFirst(std::string var) {
+void	Contact::setFirst(const std::string &var) {
 	_firstName = var;
 }
 
-void	Contact::setLast(std::string var) {
+void	Contact::setLast(const std::string &var) {
 	_lastName = var;
 }
 
-void	Contact::setNick(std::string var) {
+void	Contact::setNick(const std::string &var) {
 	_nickName = var;
 }
 
-void	Contact::setPhone(std::string var) {
+void	Contact::setPhone(const std::string &var) {
 	_phoneNumber = var;
 }
 
-void	Contact::setSecret(std::string var) {
+void	Contact::setSecret(const std::string &var) {
 	_darkestSecret = var;
 }
 
