@@ -1,8 +1,10 @@
 #include "PhoneBook.class.hpp"
 
+PhoneBook::PhoneBook(void):_pbSize(0), _index(0) {} // Member initialization during construction
+/*
 PhoneBook::PhoneBook(void):_pbSize(0), _index(0) {
 	std::cout << "\033[36mPB constructor is called.\033[0m" << std::endl;
-} // Member initialization during construction
+} // Member initialization during construction*/
 
 static int	processField(std::string field, Contact &contact) {
 	std::string	var;
@@ -123,7 +125,7 @@ int	PhoneBook::searchContact(void) const {
 	std::cout << SECRET << ": " << _contacts[index - 1].getSecret() << "\033[0m" << std::endl << std::endl;
 	return (0);
 }
-
+/*
 PhoneBook::~PhoneBook(void) {
 	std::cout << "\033[36mPB destructor is called.\033[0m" << std::endl;
-}
+}*/

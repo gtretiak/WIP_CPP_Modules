@@ -1,8 +1,8 @@
 #include "Contact.class.hpp"
-
+/*
 Contact::Contact(void) {
 	std::cout << "\033[36mContact constructor is called.\033[0m" << std::endl;
-}
+}*/
 
 std::string	Contact::getFirst(void) const {
 	return _firstName;
@@ -43,7 +43,7 @@ void	Contact::setPhone(const std::string &var) {
 void	Contact::setSecret(const std::string &var) {
 	_darkestSecret = var;
 }
-
+/*
 Contact::~Contact(void) {
 	std::cout << "\033[36mContact destructor is called.\033[0m" << std::endl;
-}
+}*/

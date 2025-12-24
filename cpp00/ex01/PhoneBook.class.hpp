@@ -17,7 +17,7 @@ class	PhoneBook {
 		PhoneBook(void);
 		int	addContact(void);
 		int	searchContact(void) const;
-		~PhoneBook(void);
+//		~PhoneBook(void);
 	private:
 		static const int	CAPACITY = 8;
 		Contact	_contacts[CAPACITY];
