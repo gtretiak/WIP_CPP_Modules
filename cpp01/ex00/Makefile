@@ -1,5 +1,5 @@
 NAME = BraiiiiiiinnnzzzZ
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC = main.cpp Zombie.class.cpp randomChump.cpp newZombie.cpp
 OBJ = $(addprefix ./, $(SRC:.cpp=.o))
 
