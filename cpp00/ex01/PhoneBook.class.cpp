@@ -101,6 +101,11 @@ int	PhoneBook::searchContact(void) const {
 	std::cout << std::setw(10) << "Last name" << " | ";
 	std::cout << std::setw(10) << "Nickname" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
+	if (_pbSize == 0)
+	{
+		std::cout << "\033[31mNo entries. Back to the main menu.\033[0m" << std::endl;
+		return (0);
+	}
 	for (int i = 0; i < _pbSize; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << " | ";
