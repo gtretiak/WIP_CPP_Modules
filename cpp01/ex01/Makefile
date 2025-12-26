@@ -1,5 +1,5 @@
 NAME = zombieHorde
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 SRC = main.cpp Zombie.class.cpp zombieHorde.cpp
 OBJ = $(addprefix ./, $(SRC:.cpp=.o))
 

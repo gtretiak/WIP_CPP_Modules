@@ -50,6 +50,7 @@ int	main(void)
 	if (c != 'y')
 	{
 		std::cout << CYA"Your warriors silently infiltrated the enemy camp and killed the guards." GRE" It's dinner time! You win!" << std::endl;
+		delete [] newBatch;
 		return (0);
 	}
 	std::cout << CYA"Of course, you do..." RES << std::endl;
