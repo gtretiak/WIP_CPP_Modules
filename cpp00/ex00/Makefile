@@ -8,7 +8,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@c++ $(SRC) -o $(NAME)
 
-%.o: %.c
+%.o: %.cpp
 	@c++ $(FLAGS) -c $< -o $@
 
 .PHONY: clean fclean re
