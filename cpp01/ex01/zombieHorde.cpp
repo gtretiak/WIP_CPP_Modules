@@ -1,4 +1,5 @@
 #include "Zombie.class.hpp"
+#include <string>
 
 Zombie	*zombieHorde(int N, std::string name) {
 	if (N <= 0)

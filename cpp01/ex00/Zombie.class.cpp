@@ -1,5 +1,6 @@
 #include "Zombie.class.hpp"
-
+#include <string>
+#include <iostream>
 #define RED "\033[31m"
 #define PURP "\033[35m"
 #define CYA "\033[36m"

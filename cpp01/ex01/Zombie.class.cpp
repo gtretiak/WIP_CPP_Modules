@@ -5,6 +5,9 @@
 #define CYA "\033[36m"
 #define RES "\033[0m"
 
+#include <string>
+#include <iostream>
+
 Zombie::Zombie() {}
 
 Zombie::Zombie(std::string name, int num) : _name(name), _num(num) {}

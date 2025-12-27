@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <cctype>
 
 static void	print_str(std::string s)

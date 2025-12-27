@@ -1,6 +1,7 @@
 #include "PhoneBook.class.hpp"
 #include "Contact.class.hpp"
-
+#include <string>
+#include <iostream>
 #define PROMPT "\033[32mEnter one of these commands: ADD, SEARCH, EXIT.\n\033[0m"
 
 int	main(void)
@@ -15,7 +16,7 @@ int	main(void)
 		if (std::cin.eof())
 		{
 			std::cout << "\033[31mCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-			exit(1);
+			return (1);
 		}
 		else if (input == "ADD")
 		{

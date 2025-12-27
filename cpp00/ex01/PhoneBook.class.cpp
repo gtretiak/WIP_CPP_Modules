@@ -1,4 +1,14 @@
 #include "PhoneBook.class.hpp"
+#include "Contact.class.hpp"
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#define FNAME "first name"
+#define LNAME "last name"
+#define NNAME "nickname"
+#define PHONE "phone number"
+#define SECRET "darkest secret"
 
 PhoneBook::PhoneBook(void):_pbSize(0), _index(0) {} // Member initialization during construction
 /*
@@ -13,7 +23,7 @@ static int	processField(std::string field, Contact &contact) {
 	if (std::cin.eof())
 	{
 		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-		exit(1);
+		std::exit(EXIT_FAILURE);
 	}
 	if (var.empty())
 	{
@@ -22,7 +32,7 @@ static int	processField(std::string field, Contact &contact) {
 		if (std::cin.eof())
 		{
 			std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-			exit(1);
+			std::exit(EXIT_FAILURE);
 		}
 	}
 	if (var.empty())
@@ -73,7 +83,7 @@ int	PhoneBook::addContact(void) { //member fucntion
 			if (std::cin.eof())
 			{
 				std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-				exit(1);
+				std::exit(EXIT_FAILURE);
 			}
 			std::cin.ignore();
 			if (c == 'n')
@@ -118,7 +128,7 @@ int	PhoneBook::searchContact(void) const {
 	if (std::cin.eof())
 	{
 		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-		exit(1);
+		std::exit(EXIT_FAILURE);
 	}
 	std::cin.ignore();
 	if (index < 1 || index > _pbSize)

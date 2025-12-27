@@ -1,5 +1,6 @@
 #include "Zombie.class.hpp"
 #include <iostream>
+#include <string>
 
 #define RED "\033[31m"
 #define GRE "\033[32m"

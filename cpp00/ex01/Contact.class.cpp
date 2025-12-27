@@ -1,4 +1,5 @@
 #include "Contact.class.hpp"
+#include <string>
 /*
 Contact::Contact(void) {
 	std::cout << "\033[36mContact constructor is called.\033[0m" << std::endl;

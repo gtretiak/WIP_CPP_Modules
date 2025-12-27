@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "Zombie.class.hpp"
 #define YE "\033[33m"
 #define CYA "\033[36m"
