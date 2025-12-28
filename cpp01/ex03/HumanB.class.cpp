@@ -4,19 +4,19 @@
 #include <string>
 
 HumanB::HumanB(std::string name) : name_(name) {
-	weapon_ = setType("bare hands");
+	this->weapon_ = setType("bare hands");
 }
 
 void	HumanB::setWeapon(Weapon weapon) {
-	weapon_ = weapon.getType();
+	this->weapon_ = weapon.getType();
 }
 
 std::string	HumanB::getName(void) const {
-	return (name_);
+	return (this->name_);
 }
 
 void	HumanB::attack() const {
-	std::cout << getName() << " attacks with their " << weapon_.getType() << std::endl;
+	std::cout << getName() << " attacks with their " << this->weapon_.getType() << std::endl;
 }
 
 HumanB::~HumanB() {

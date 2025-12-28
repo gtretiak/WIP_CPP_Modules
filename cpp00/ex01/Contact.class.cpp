@@ -1,50 +1,42 @@
 #include "Contact.class.hpp"
 #include <string>
-/*
-Contact::Contact(void) {
-	std::cout << "\033[36mContact constructor is called.\033[0m" << std::endl;
-}*/
 
 std::string	Contact::getFirst(void) const {
-	return firstName_;
+	return this->firstName_;
 }
 
 std::string	Contact::getLast(void) const {
-	return lastName_;
+	return this->lastName_;
 }
 
 std::string	Contact::getNick(void) const {
-	return nickName_;
+	return this->nickName_;
 }
 
 std::string	Contact::getPhone(void) const {
-	return phoneNumber_;
+	return this->phoneNumber_;
 }
 
 std::string	Contact::getSecret(void) const {
-	return darkestSecret_;
+	return this->darkestSecret_;
 }
 
 void	Contact::setFirst(const std::string &var) {
-	firstName_ = var;
+	this->firstName_ = var;
 }
 
 void	Contact::setLast(const std::string &var) {
-	lastName_ = var;
+	this->lastName_ = var;
 }
 
 void	Contact::setNick(const std::string &var) {
-	nickName_ = var;
+	this->nickName_ = var;
 }
 
 void	Contact::setPhone(const std::string &var) {
-	phoneNumber_ = var;
+	this->phoneNumber_ = var;
 }
 
 void	Contact::setSecret(const std::string &var) {
-	darkestSecret_ = var;
+	this->darkestSecret_ = var;
 }
-/*
-Contact::~Contact(void) {
-	std::cout << "\033[36mContact destructor is called.\033[0m" << std::endl;
-}*/

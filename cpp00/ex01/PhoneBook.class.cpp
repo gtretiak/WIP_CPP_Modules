@@ -63,10 +63,10 @@ int	PhoneBook::addContact(void) { //member fucntion
 		return (1);
 	if (index_ < CAPACITY)
 	{
-		this->contacts_[index_] = contact;
-		index_++;
-		if (pbSize_ < CAPACITY)
-			pbSize_++;
+		this->contacts_[this->index_] = contact;
+		this->index_++;
+		if (this->pbSize_ < this->CAPACITY)
+			this->pbSize_++;
 	}
 	else
 	{
@@ -85,9 +85,9 @@ int	PhoneBook::addContact(void) { //member fucntion
 			if (c == 'n')
 				return (0);
 		}
-		index_ = 0;
-		this->contacts_[index_] = contact;
-		index_++;
+		this->index_ = 0;
+		this->contacts_[this->index_] = contact;
+		this->index_++;
 	}
 	return (0);
 }
@@ -115,9 +115,9 @@ int	PhoneBook::searchContact(void) const {
 	for (int i = 0; i < pbSize_; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << " | ";
-		std::cout << std::setw(10) << getData(contacts_[i].getFirst()) << " | ";
-		std::cout << std::setw(10) << getData(contacts_[i].getLast()) << " | ";
-		std::cout << std::setw(10) << getData(contacts_[i].getNick()) << std::endl;
+		std::cout << std::setw(10) << getData(this->contacts_[i].getFirst()) << " | ";
+		std::cout << std::setw(10) << getData(this->contacts_[i].getLast()) << " | ";
+		std::cout << std::setw(10) << getData(this->contacts_[i].getNick()) << std::endl;
 	}
 	std::cout << "Enter the index of the entry to display: \033[0m";
 	std::cin >> index;
@@ -127,12 +127,12 @@ int	PhoneBook::searchContact(void) const {
 		std::exit(EXIT_FAILURE);
 	}
 	std::cin.ignore();
-	if (index < 1 || index > pbSize_)
+	if (index < 1 || index > this->pbSize_)
 	       return (1);
-	std::cout << std::endl << "\033[35m" << FNAME << ": " << contacts_[index - 1].getFirst() << std::endl;
-	std::cout << LNAME << ": " << contacts_[index - 1].getLast() << std::endl;
-	std::cout << NNAME << ": " << contacts_[index - 1].getNick() << std::endl;
-	std::cout << PHONE << ": " << contacts_[index - 1].getPhone() << std::endl;
-	std::cout << SECRET << ": " << contacts_[index - 1].getSecret() << "\033[0m" << std::endl << std::endl;
+	std::cout << std::endl << "\033[35m" << FNAME << ": " << this->contacts_[index - 1].getFirst() << std::endl;
+	std::cout << LNAME << ": " << this->contacts_[index - 1].getLast() << std::endl;
+	std::cout << NNAME << ": " << this->contacts_[index - 1].getNick() << std::endl;
+	std::cout << PHONE << ": " << this->contacts_[index - 1].getPhone() << std::endl;
+	std::cout << SECRET << ": " << this->contacts_[index - 1].getSecret() << "\033[0m" << std::endl << std::endl;
 	return (0);
 }

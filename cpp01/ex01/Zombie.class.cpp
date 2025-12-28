@@ -13,16 +13,16 @@ Zombie::Zombie() {}
 Zombie::Zombie(std::string name, int num) : name_(name), num_(num) {}
 
 std::string	Zombie::getName(void) const {
-	return (name_);
+	return (this->name_);
 }
 
 void	Zombie::setZombie(std::string const name, int const num) {
-	name_ = name;
-	num_ = num;
+	this->name_ = name;
+	this->num_ = num;
 }
 
 int	Zombie::getNum(void) const {
-	return (num_);
+	return (this->num_);
 }
 
 void	Zombie::announce(void) const {

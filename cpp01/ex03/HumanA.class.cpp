@@ -6,11 +6,11 @@
 HumanA::HumanA(std::string name, Weapon weapon) : name_(name), weapon_(weapon) {}
 
 std::string	HumanA::getName(void) const {
-	return (name_);
+	return (this->name_);
 }
 
 void	HumanA::attack() const {
-	std::cout << getName() << " attacks with their " << weapon_.getType() << std::endl;
+	std::cout << getName() << " attacks with their " << this->weapon_.getType() << std::endl;
 }
 
 HumanA::~HumanA() {
