@@ -3,20 +3,20 @@
 #include <iostream>
 #include <string>
 
-HumanB::HumanB(std::string name) : _name(name) {
-	_weapon = setType("bare hands");
+HumanB::HumanB(std::string name) : name_(name) {
+	weapon_ = setType("bare hands");
 }
 
 void	HumanB::setWeapon(Weapon weapon) {
-	_weapon = weapon.getType();
+	weapon_ = weapon.getType();
 }
 
 std::string	HumanB::getName(void) const {
-	return (_name);
+	return (name_);
 }
 
 void	HumanB::attack() const {
-	std::cout << getName() << " attacks with their " << _weapon.getType() << std::endl;
+	std::cout << getName() << " attacks with their " << weapon_.getType() << std::endl;
 }
 
 HumanB::~HumanB() {

@@ -7,8 +7,8 @@ class	Weapon;
 
 class	HumanA {
 	private:
-		Weapon		_weapon;
-		std::string	_name;
+		Weapon		weapon_;
+		std::string	name_;
 	public:
 		HumanA(std::string name, Weapon weapon);
 		std::string	getName(void) const;

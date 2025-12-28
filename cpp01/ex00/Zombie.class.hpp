@@ -5,7 +5,7 @@
 
 class	Zombie {
 	private:
-		std::string const	_name;
+		std::string const	name_;
 	public:
 		Zombie(std::string name);
 		std::string	getName(void) const;

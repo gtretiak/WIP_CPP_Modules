@@ -7,10 +7,10 @@
 #define RES "\033[0m"
 
 std::string	Zombie::getName(void) const {
-	return (_name);
+	return (name_);
 }
 
-Zombie::Zombie(std::string name) : _name(name) {}
+Zombie::Zombie(std::string name) : name_(name) {}
 
 void	Zombie::announce(void) const {
 	std::cout << getName() << ": " 

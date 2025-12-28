@@ -11,9 +11,9 @@ class	PhoneBook {
 //		~PhoneBook(void);
 	private:
 		static const int	CAPACITY = 8;
-		Contact	_contacts[CAPACITY];
-		int		_pbSize;
-		int		_index;
+		Contact	contacts_[CAPACITY];
+		int		pbSize_;
+		int		index_;
 };
 
 #endif

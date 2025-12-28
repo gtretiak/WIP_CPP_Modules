@@ -3,14 +3,14 @@
 #include <iostream>
 #include <string>
 
-HumanA::HumanA(std::string name, Weapon weapon) : _name(name), _weapon(weapon) {}
+HumanA::HumanA(std::string name, Weapon weapon) : name_(name), weapon_(weapon) {}
 
 std::string	HumanA::getName(void) const {
-	return (_name);
+	return (name_);
 }
 
 void	HumanA::attack() const {
-	std::cout << getName() << " attacks with their " << _weapon.getType() << std::endl;
+	std::cout << getName() << " attacks with their " << weapon_.getType() << std::endl;
 }
 
 HumanA::~HumanA() {

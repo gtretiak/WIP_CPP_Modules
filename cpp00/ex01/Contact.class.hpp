@@ -18,11 +18,11 @@ class	Contact {
 		void	setSecret(const std::string &var);
 //		~Contact(void);
 	private:
-		std::string	_firstName;
-		std::string	_lastName;
-		std::string	_nickName;
-		std::string	_phoneNumber;
-		std::string	_darkestSecret;
+		std::string	firstName_;
+		std::string	lastName_;
+		std::string	nickName_;
+		std::string	phoneNumber_;
+		std::string	darkestSecret_;
 };
 
 #endif

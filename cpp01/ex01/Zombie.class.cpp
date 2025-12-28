@@ -10,19 +10,19 @@
 
 Zombie::Zombie() {}
 
-Zombie::Zombie(std::string name, int num) : _name(name), _num(num) {}
+Zombie::Zombie(std::string name, int num) : name_(name), num_(num) {}
 
 std::string	Zombie::getName(void) const {
-	return (_name);
+	return (name_);
 }
 
 void	Zombie::setZombie(std::string const name, int const num) {
-	_name = name;
-	_num = num;
+	name_ = name;
+	num_ = num;
 }
 
 int	Zombie::getNum(void) const {
-	return (_num);
+	return (num_);
 }
 
 void	Zombie::announce(void) const {

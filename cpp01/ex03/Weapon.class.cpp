@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 
-Weapon::Weapon(std::string type) : _type(type) {}
+Weapon::Weapon(std::string type) : type_(type) {}
 
 std::string	&Weapon::getType(void) {
-	return (_type);
+	return (type_);
 }
 
 void	Weapon::setType(std::string const type) {
-	_type = type;
+	type_ = type;
 }
 
 Weapon::~Weapon() {
