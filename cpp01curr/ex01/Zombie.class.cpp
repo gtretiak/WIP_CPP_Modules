@@ -32,5 +32,5 @@ void	Zombie::announce(void) const {
 
 Zombie::~Zombie() {
 	std::cout << CYA"The zombie " RES << getName() << getNum() << CYA" has been "
-		RED"killed..." RES << std::endl;
+		RED"fell to the ground..." RES << std::endl;
 }

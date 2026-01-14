@@ -36,7 +36,7 @@ int	main(void)
 	Zombie	*newBatch = zombieHorde(N, name);
 	if (!newBatch)
 	{
-		std::cout << CYA"Well... Probably not this time..." << std::endl;
+		std::cout << CYA"Well... Probably not this time..." RES << std::endl;
 		return (0);
 	}
 	std::cout << CYA"The batch of zombies each named " RES << newBatch[0].getName() << CYA
@@ -50,7 +50,7 @@ int	main(void)
 	std::cin.ignore();
 	if (c != 'y')
 	{
-		std::cout << CYA"Your warriors silently infiltrated the enemy camp and killed the guards." GRE" It's dinner time! You win!" << std::endl;
+		std::cout << CYA"Since your warriors didn't hear a firm 'y', they continued walking.\nThey silently infiltrated the enemy camp and killed the guards." GRE" It's dinner time! You win!" << std::endl;
 		delete [] newBatch;
 		return (0);
 	}
@@ -60,8 +60,8 @@ int	main(void)
 	std::cout << RED"!!! Warriors of light suddenly appeared (they heard the zombies, idiot) !!!" RES << std::endl;
 	delete [] newBatch;
 	std::cout << CYA"You failed again and asked yourself: "
-		 RES"\"Should I try another time with demons?\n... ... or ... or ...\n"
+		 RES"\"Should I try another time with demons?\n"
 		 "Wait, what if I'm not the Lord of Darkness at all?\""
-		CYA" and you burst into tears..." << std::endl;
+		CYA" and you burst into tears..." RES << std::endl;
 	return (0);
 }

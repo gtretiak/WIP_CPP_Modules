@@ -106,8 +106,21 @@ static std::string	getData(const std::string &data)
 		return (data);
 }
 
+static bool	are_digits(const std::string &s)
+{
+	if (s.empty())
+		return (false);
+	for (size_t i = 0; i < s.size(); i++)
+	{
+		if (!std::isdigit(s[i]))
+			return (false);
+	}
+	return (true);
+}
+
 int	PhoneBook::searchContact(void) const {
 	int	index;
+	std::string	input;
 	std::cout << "\033[32m" << std::setw(10) << "Index" << " | ";
 	std::cout << std::setw(10) << "First name" << " | ";
 	std::cout << std::setw(10) << "Last name" << " | ";
@@ -126,13 +139,15 @@ int	PhoneBook::searchContact(void) const {
 		std::cout << std::setw(10) << getData(this->contacts_[i].getNick()) << std::endl;
 	}
 	std::cout << "Enter the index of the entry to display: \033[0m";
-	std::cin >> index;
+	std::getline(std::cin, input);
 	if (std::cin.eof())
 	{
 		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
 		return (-1);
 	}
-	std::cin.ignore();
+	if (!are_digits(input))
+		return (1);
+	index = std::atoi(input.c_str());
 	if (index < 1 || index > this->pbSize_)
 	       return (1);
 	std::cout << std::endl << "\033[35m" << FNAME << ": " << this->contacts_[index - 1].getFirst() << std::endl;

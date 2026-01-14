@@ -13,7 +13,7 @@ int	main(void)
 	while (1)
 	{
 		std::cout << PROMPT;
-		getline(std::cin, input);
+		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
 			std::cout << "\033[31mCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
@@ -36,8 +36,8 @@ int	main(void)
 			if (ret == -1)
 				return (1);
 			else if (ret == 1)
-				std::cout << "\033[31mThe index of the entry to display is out of range." <<
-					" Back to the main menu...\033[0m" << std::endl;
+				std::cout << "\033[31mThe index of the entry to display is out of range (insert digits only from 1 to 8).\n" <<
+					"Back to the main menu...\033[0m" << std::endl;
 		}
 		else if (input == "EXIT")
 			break ;
