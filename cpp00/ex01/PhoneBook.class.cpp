@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <cctype>
 #define FNAME "first name"
 #define LNAME "last name"
 #define NNAME "nickname"
