@@ -4,7 +4,7 @@
 
 static void	print_str(std::string s)
 {
-	for (int i = 0; i < s.length(); i++)
+	for (size_t i = 0; i < s.length(); i++)
 		s[i] = std::toupper(s[i]);
 	std::cout << "\033[32m" << s;
 }
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 			print_str(s);
 			if (i < argc - 1)
 				std::cout << " ";
+			else
+				std::cout << "\033[0m";
 		}
 	}
 	std::cout << std::endl;

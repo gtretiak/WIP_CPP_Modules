@@ -19,7 +19,7 @@ static int	processField(std::string field, Contact &contact) {
 	if (std::cin.eof())
 	{
 		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-		std::exit(EXIT_FAILURE);
+		return (-1);
 	}
 	if (var.empty())
 	{
@@ -28,7 +28,7 @@ static int	processField(std::string field, Contact &contact) {
 		if (std::cin.eof())
 		{
 			std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-			std::exit(EXIT_FAILURE);
+			return (-1);
 		}
 	}
 	if (var.empty())
@@ -50,17 +50,23 @@ int	PhoneBook::addContact(void) { //member fucntion
 	Contact	contact;
 	char	c;
 	bool	overwritten = false;
+	int	ret;
 
-	if (processField(FNAME, contact))
-		return (1);
-	if (processField(LNAME, contact))
-		return (1);
-	if (processField(NNAME, contact))
-		return (1);
-	if (processField(PHONE, contact))
-		return (1);
-	if (processField(SECRET, contact))
-		return (1);
+	ret = processField(FNAME, contact);
+	if (ret != 0)
+		return (ret);
+	ret = processField(LNAME, contact);
+	if (ret != 0)
+		return (ret);
+	ret = processField(NNAME, contact);
+	if (ret != 0)
+		return (ret);
+	ret = processField(PHONE, contact);
+	if (ret != 0)
+		return (ret);
+	ret = processField(SECRET, contact);
+	if (ret != 0)
+		return (ret);
 	if (index_ < CAPACITY)
 	{
 		this->contacts_[this->index_] = contact;
@@ -79,7 +85,7 @@ int	PhoneBook::addContact(void) { //member fucntion
 			if (std::cin.eof())
 			{
 				std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-				std::exit(EXIT_FAILURE);
+				return (-1);
 			}
 			std::cin.ignore();
 			if (c == 'n')
@@ -124,7 +130,7 @@ int	PhoneBook::searchContact(void) const {
 	if (std::cin.eof())
 	{
 		std::cout << "\033[31m\nCtrl+D has pressed (EoF). Exit with code 1.\033[0m" << std::endl;
-		std::exit(EXIT_FAILURE);
+		return (-1);
 	}
 	std::cin.ignore();
 	if (index < 1 || index > this->pbSize_)

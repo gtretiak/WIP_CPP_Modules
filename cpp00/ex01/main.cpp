@@ -7,6 +7,7 @@
 int	main(void)
 {
 	std::string	input;
+	int		ret;
 	PhoneBook	PB;
 
 	while (1)
@@ -20,7 +21,10 @@ int	main(void)
 		}
 		else if (input == "ADD")
 		{
-			if (PB.addContact())
+			ret = PB.addContact();
+			if (ret == -1)
+				return (1);
+			else if (ret == 1)
 				std::cout << "\033[31mContact can’t have empty fields. Not saved. " <<
 					"Back to the main menu...\033[0m" << std::endl;
 			else
@@ -28,7 +32,10 @@ int	main(void)
 		}
 		else if (input == "SEARCH")
 		{
-			if (PB.searchContact())
+			ret = PB.searchContact();
+			if (ret == -1)
+				return (1);
+			else if (ret == 1)
 				std::cout << "\033[31mThe index of the entry to display is out of range." <<
 					" Back to the main menu...\033[0m" << std::endl;
 		}
