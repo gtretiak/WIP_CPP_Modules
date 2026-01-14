@@ -3,16 +3,18 @@
 #include <iostream>
 #include <string>
 
-HumanA::HumanA(std::string name, Weapon weapon) : name_(name), weapon_(weapon) {}
-
-std::string	HumanA::getName(void) const {
-	return (this->name_);
+HumanA::HumanA(std::string name, Weapon &weapon) : name_(name), weapon_(weapon) {
+	std::cout << this->name_ << " has stepped onto the arena, holding the " << this->weapon_.getType() << "." << std::endl;
 }
 
+/*std::string	HumanA::getName(void) const {
+	return (this->name_);
+}
+*/
 void	HumanA::attack() const {
-	std::cout << getName() << " attacks with their " << this->weapon_.getType() << std::endl;
+	std::cout << this->name_ << " attacks with their " << this->weapon_.getType() << "." << std::endl;
 }
 
 HumanA::~HumanA() {
-	std::cout << getName() << " was murdered..." << std::endl;
+	std::cout << this->name_ << " has left the arena..." << std::endl;
 }

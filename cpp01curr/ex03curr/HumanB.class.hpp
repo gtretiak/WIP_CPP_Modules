@@ -7,13 +7,13 @@ class	Weapon;
 
 class	HumanB {
 	private:
-		Weapon		*weapon_;
 		std::string	name_;
+		Weapon		*weapon_; // by pointer - might not have
 	public:
 		HumanB(std::string name);
 //		std::string	getName(void) const;
-:		void	setWeapon(Weapon &weapon);
-		void	attack() const;
+		void	setWeapon(Weapon &weapon);
+		void	attack() const; // to add enemyRef TODO
 		~HumanB();
 };
 

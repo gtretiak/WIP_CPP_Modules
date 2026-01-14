@@ -7,13 +7,12 @@ class	Weapon;
 
 class	HumanA {
 	private:
-		Weapon		&weapon_;
 		std::string	name_;
+		Weapon		&weapon_; // by reference - always has
 	public:
 		HumanA(std::string name, Weapon &weapon);
-//		std::string	getName(void) const;
-		void	setWeapon(Weapon weapon);
-		void	attack() const;
+	//	std::string	getName(void) const;
+		void	attack() const; // to add enemyRef TODO
 		~HumanA();
 };
 
