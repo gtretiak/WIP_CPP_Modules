@@ -22,9 +22,9 @@ args = "Build and Run"
 name = "Build and Run"
 author = "agent"
 
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "cd ex00 && make re && ./megaphone \"Hello from Replit!\""
-
 [workflows.workflow.metadata]
 outputType = "console"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd cpp00/ex00 && make re && ./megaphone \"Hello from Replit!\""
