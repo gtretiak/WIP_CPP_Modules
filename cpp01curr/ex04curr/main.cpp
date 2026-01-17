@@ -1,42 +1,54 @@
 #include "sed.hpp"
 
-int	main(int argc, char **argv) {
-	std::string	result;
-	std::string	initialText;
-	size_t		pos;
-	size_t		len;
+int	arg_checker(int argc, char **argv) {
 	if (argc != 4)
 	{
 		std::cerr << "Error: Invalid number of arguments. Expected a filename and two strings." << std::endl;
 		return (1);
 	}
-	std::cout << "filename: " << argv[1] << std::endl;
-	std::cout << "string to be replaced: " << argv[2] << std::endl;
-	std::cout << "string to replace with: " << argv[3] << std::endl;
-	std::ifstream	infile(argv[1]);
-	if (!infile)
-	{
-		std::cerr << "Error: Invalid filename." << std::endl;
-		return (1);
-	}
-	if (infile.empty())
-	{
-		std::cerr << "Error: No text has been found in the file." << std::endl;
-		return (1);
-	}
-	if (argv[2].empty())
+	std::string	s1(argv[2]);
+	if (s1.empty())
 	{
 		std::cerr << "Error: string to be replaced is empty." << std::endl;
 		return (1);
 	}
-	len = argv[2].length();
-	std::getline(infile, initialText);
+	return (0);
+}
+
+std::string	reading(char *filename) {
+	std::string	text;
+	std::string	buf;
+	std::ifstream	infile(filename);
+	if (!infile)
+	{
+		std::cerr << "Error: Invalid file." << std::endl;
+		return ("");
+	}
+	while (std::getline(infile, buf))
+	{	
+		text += buf += "\n";
+	}
+	if (text.empty())
+		std::cerr << "Error: File is empty." << std::endl;
+	return (text);
+}
+
+int	main(int argc, char **argv) {
+	std::string	text;
+	if (arg_checker(argc, argv))
+		return (1);
+	text = reading(argv[1]);
+	if (text.empty())
+		return (1);
+	
+/*	size_t		pos;
+//	size_t		len;
 	pos = infile.find(argv[2]);
 	if (pos = npos)
 		std::cout << "Not found" << std::endl;
 	result = infile.substr(0, pos);
 //	result += //new cycle
 //	input.length()
-//	std::ofstream	result(argv[1] + ".replace");	
+//	std::ofstream	result(argv[1] + ".replace");*/	
 	return (0);
 }
