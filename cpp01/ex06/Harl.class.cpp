@@ -5,8 +5,11 @@ Harl::Harl() {
 	std::cout << "Harl has entered the room, noticed us and opened his mouth to say something...\n" << std::endl;
 }
 
-Harl::Harl(std::string filter) : filter_(filter) {
+Harl::Harl(std::string filter) : filter_(filter), tricked_(false) {
 	std::cout << "Harl has entered the room again, but what's the point to listen to him?\n" << "We applied \"" << this->filter_ << "\" filter to his complaints.\n" << std::endl;
+	if (this->filter_ != "DEBUG" && this->filter_ != "INFO"
+		&& this->filter_ != "WARNING" && this->filter_ != "ERROR")
+		this->tricked_ = true;
 }
 
 void	Harl::debug(void) {
@@ -33,6 +36,12 @@ void	Harl::complain(std::string level) {
 	static bool	muted = false;
 	if (muted)
 		return ;
+	if (this->tricked_)
+	{
+		muted = true;
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		return ;
+	}
 	switch (this->filter_[0]) {
 		case 'D':
 			i = 0;

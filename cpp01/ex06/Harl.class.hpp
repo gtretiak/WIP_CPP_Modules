@@ -15,6 +15,7 @@ class	Harl {
 		void	warning(void);
 		void	error(void);
 		std::string	filter_;
+		bool	tricked_;
 };
 
 #endif
