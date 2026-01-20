@@ -1,4 +1,4 @@
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 #include <iostream>
 
 int	main(void) {
