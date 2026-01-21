@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 .PHONY: clean fclean re
 
 clean:
-	@rm- rf $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean
 	@rm -rf $(NAME)

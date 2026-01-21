@@ -4,11 +4,11 @@
 class	Fixed {
 	private:
 		int	value_;
-		static const int	bits_;
+		static const int	bits_ = 8;
 	public:
 		Fixed();
 		Fixed(const Fixed &Another);
-		&Fixed	operator=(const Fixed &Another) const;
+		Fixed	&operator=(const Fixed &Another);
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);
 		~Fixed();

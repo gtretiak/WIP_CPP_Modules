@@ -2,29 +2,28 @@
 #include <iostream>
 
 Fixed::Fixed() : value_(0) {
-	std::cout << "Default constructor has initialized a value to " << this->value_ << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &Another)() {
-	this->value_ = *Another::value_;
-	this->bits_ = *Another::bits_;
-	std::cout << "A copy constructor has been called" << std::endl;
+Fixed::Fixed(const Fixed &Another) : value_(Another.value_) {
+	std::cout << "Copy constructor called" << std::endl;
 }
 
-&Fixed	Fixed::operator=(const Fixed &Another) const {
-	this->value_ = *Another::value_;
-	this->bits_ = *Another::bits_;
+Fixed	&Fixed::operator=(const Fixed &Another) {
+	this->value_ = Another.value_;
+	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
 int	Fixed::getRawBits(void) const {
-	return 0; // raw value of fixed-point value
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this-> value_); // raw value of fixed-point value
 }
 
 void	Fixed::setRawBits(int const raw) {
-	; // set raw value of fixed-point value
+	this->value_ = raw; // set raw value of fixed-point value
 }
 
 Fixed::~Fixed() {
-	std::cout << "Desctructor has been called" << std::endl;
+	std::cout << "Desctructor called" << std::endl;
 }
