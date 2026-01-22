@@ -8,13 +8,12 @@ class	Fixed {
 		Fixed(const float num);
 		Fixed(const &Fixed Ex);
 		Fixed	&operator=(const &Fixed Ex);
-		//	operator<<();TODO
+		std::ostream	&operator<<(std::ostream &out, const Fixed &Num);
 		float	toFloat(void) const;
 		int	toInt(void) const;
 		~Fixed();
 	private:
 		int	value_;
-		//float	value_; TODO?
 		static const int	bits_ = 8;
 };
 

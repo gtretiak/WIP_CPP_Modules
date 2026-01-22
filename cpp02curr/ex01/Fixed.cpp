@@ -5,11 +5,11 @@ Fixed::Fixed() : value_(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int num) : value_(num) {
+Fixed::Fixed(const int num) : value_(num * (1 << bits_)) {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float num) : value_(num) { //TODO
+Fixed::Fixed(const float num) : value_(roundf(num * (1 << bits_))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -21,7 +21,10 @@ Fixed	&operator=(const &Fixed Ex) {
 	std::cout << "Copy assignment operator called" << std::endl;
 }
 
-//	operator<<() {} TODO
+std::ostream	&Fixed::operator<<(std::ostream &out, const Fixed &Num) {
+	out << "Value is: " << Num.value_ / (1 << bits_) << std::endl; // TODO
+	return (out);
+}
 
 int	Fixed::getRawBits(void) const {
 	return (this->value_);
