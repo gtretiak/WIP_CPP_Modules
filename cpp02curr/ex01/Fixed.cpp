@@ -5,25 +5,22 @@ Fixed::Fixed() : value_(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int num) : value_(num * (1 << bits_)) {
+Fixed::Fixed(const int num) : value_(num * (1 << Fixed::bits_)) {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float num) : value_(roundf(num * (1 << bits_))) {
+Fixed::Fixed(const float num) : value_(roundf(num * (1 << Fixed::bits_))) { //rounding to store float
 	std::cout << "Float constructor called" << std::endl;
 }
 
-Fixed::Fixed(const &Fixed Ex) {
+Fixed::Fixed(const Fixed &Ex) : value_(Ex.value_) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed	&operator=(const &Fixed Ex) {
+Fixed	&Fixed::operator=(const Fixed &Ex) {
 	std::cout << "Copy assignment operator called" << std::endl;
-}
-
-std::ostream	&Fixed::operator<<(std::ostream &out, const Fixed &Num) {
-	out << "Value is: " << Num.value_ / (1 << bits_) << std::endl; // TODO
-	return (out);
+	this->value_ = Ex.value_;
+	return (*this);
 }
 
 int	Fixed::getRawBits(void) const {
@@ -35,15 +32,18 @@ void	Fixed::setRawBits(int const raw) {
 }
 
 float	Fixed::toFloat(void) const {
-	return ((float)this->value_); //TODO
+	return ((float)this->value_ / (1 << Fixed::bits_)); //casting to float
 }
 
 int	Fixed::toInt(void) const {
-	return ((int)this->value_); //TODO
+	return (this->value_ / (1 << Fixed::bits_));
 }
 
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-#endif
+std::ostream	&operator<<(std::ostream &out, const Fixed &Num) {
+	out << Num.toFloat(); //float by default (handles int too)
+	return (out);
+}
