@@ -1,6 +1,6 @@
 NAME = nowWeAreTalking
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = main.cpp Fixed.class.cpp
+SRC = main.cpp Fixed.cpp
 OBJ = $(addprefix ./, $(SRC:.cpp=.o))
 
 all: $(NAME)
