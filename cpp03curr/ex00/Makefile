@@ -1,6 +1,6 @@
 NAME = clapTrap
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = main.cpp ClapTrap.class.cpp
+SRC = main.cpp ClapTrap.cpp
 OBJ = $(addprefix ./, $(SRC:.cpp=.o))
 
 all: $(NAME)

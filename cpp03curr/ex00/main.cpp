@@ -1,4 +1,4 @@
-#include "ClapTrap.class.hpp"
+#include "ClapTrap.hpp"
 
 int	main(void) {
 	return 0;
