@@ -18,20 +18,20 @@ class	Fixed {
 		static const Fixed	&min(const Fixed &One, const Fixed &Two);
 		static const Fixed	&max(const Fixed &One, const Fixed &Two);
 		// Binary Comparison:
-		bool	operator<(const Fixed &Another);
-		bool	operator>(const Fixed &Another);
-		bool	operator<=(const Fixed &Another);
-		bool	operator>=(const Fixed &Another);
-		bool	operator==(const Fixed &Another);
-		bool	operator!=(const Fixed &Another);
+		bool	operator<(const Fixed &Another) const;
+		bool	operator>(const Fixed &Another) const;
+		bool	operator<=(const Fixed &Another) const;
+		bool	operator>=(const Fixed &Another) const;
+		bool	operator==(const Fixed &Another) const;
+		bool	operator!=(const Fixed &Another) const;
 		// Binary Arithmetic (returning new object), then using copy assignment internally:
-		Fixed	operator+(const Fixed &Another);
-		Fixed	operator-(const Fixed &Another);
-		Fixed	operator*(const Fixed &Another);
-		Fixed	operator/(const Fixed &Another);
-		Fixed	operator%(const Fixed &Another);
+		Fixed	operator+(const Fixed &Another) const;
+		Fixed	operator-(const Fixed &Another) const;
+		Fixed	operator*(const Fixed &Another) const;
+		Fixed	operator/(const Fixed &Another) const;
+		Fixed	operator%(const Fixed &Another) const;
 		// Unary:
-		Fixed	operator-(void); // returning new object
+		Fixed	operator-(void) const; // returning new object
 		Fixed	&operator++(void); // pre-incrementing: the same object
 		Fixed	&operator--(void); // pre-decrementing: the same object
 		Fixed	operator++(int dummy); // post-incrementing: new object

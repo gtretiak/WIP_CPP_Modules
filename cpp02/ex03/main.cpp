@@ -55,13 +55,13 @@ int	main(void) {
 	float	point[2];
 	if (reading(triangle, point))
 		return (1);
-	Point	a(static_cast<const float>(triangle[0][0]), static_cast<const float>(triangle[0][1]));
-	Point	b(static_cast<const float>(triangle[1][0]), static_cast<const float>(triangle[1][1]));
-	Point	c(static_cast<const float>(triangle[2][0]), static_cast<const float>(triangle[2][1]));
-	Point	p(static_cast<const float>(point[0]), static_cast<const float>(point[1]));
+	Point	a(triangle[0][0], triangle[0][1]);
+	Point	b(triangle[1][0], triangle[1][1]);
+	Point	c(triangle[2][0], triangle[2][1]);
+	Point	p(point[0], point[1]);
 	if (bsp(a, b, c, p))
 		std::cout << "The point is inside the triangle." << std::endl;
 	else
-		std::cout << "The point is either a vertex, on an edge, or outside of the triangle." << std::endl;
+		std::cout << "Try next time!" << std::endl;
 	return (0);
 }

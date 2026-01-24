@@ -60,44 +60,44 @@ Fixed const	&Fixed::max(const Fixed &One, const Fixed &Two) {
 		return (Two);
 }
 
-bool	Fixed::operator<(const Fixed &Another) {
+bool	Fixed::operator<(const Fixed &Another) const {
 	return (this->value_ < Another.getRawBits());
 }
-bool	Fixed::operator>(const Fixed &Another) {
+bool	Fixed::operator>(const Fixed &Another) const {
 	return (this->value_ > Another.getRawBits());
 }
-bool	Fixed::operator<=(const Fixed &Another) {
+bool	Fixed::operator<=(const Fixed &Another) const {
 	return (this->value_ <= Another.getRawBits());
 }
-bool	Fixed::operator>=(const Fixed &Another) {
+bool	Fixed::operator>=(const Fixed &Another) const {
 	return (this->value_ >= Another.getRawBits());
 }
-bool	Fixed::operator==(const Fixed &Another) {
+bool	Fixed::operator==(const Fixed &Another) const {
 	return (this->value_ == Another.getRawBits());
 }
-bool	Fixed::operator!=(const Fixed &Another) {
+bool	Fixed::operator!=(const Fixed &Another) const {
 	return (this->value_ != Another.getRawBits());
 }
 
-Fixed	Fixed::operator+(const Fixed &Another) {
+Fixed	Fixed::operator+(const Fixed &Another) const {
 	Fixed	Result;
 	int	mathRes = this->value_ + Another.getRawBits();
 	Result.setRawBits(mathRes);
 	return (Result);
 }
-Fixed	Fixed::operator-(const Fixed &Another) {
+Fixed	Fixed::operator-(const Fixed &Another) const {
 	Fixed	Result;
 	int	mathRes = this->value_ - Another.getRawBits();
 	Result.setRawBits(mathRes);
 	return (Result);
 }
-Fixed	Fixed::operator*(const Fixed &Another) {
+Fixed	Fixed::operator*(const Fixed &Another) const {
 	Fixed	Result;
 	long long	mathRes = static_cast<long long>(this->value_) * Another.getRawBits();
 	Result.setRawBits(mathRes / (1 << bits_));
 	return (Result);
 }
-Fixed	Fixed::operator/(const Fixed &Another) {
+Fixed	Fixed::operator/(const Fixed &Another) const {
 	Fixed	Result;
 	if (Another.getRawBits() == 0)
 	{
@@ -108,14 +108,14 @@ Fixed	Fixed::operator/(const Fixed &Another) {
 	Result.setRawBits(mathRes);
 	return (Result);
 }
-Fixed	Fixed::operator%(const Fixed &Another) {
+Fixed	Fixed::operator%(const Fixed &Another) const {
 	Fixed	Result;
 	int	mathRes = this->value_ % Another.getRawBits();
 	Result.setRawBits(mathRes);
 	return (Result);
 }
 
-Fixed	Fixed::operator-(void) {
+Fixed	Fixed::operator-(void) const {
 	Fixed	Result;
 	Result.setRawBits(-(this->value_));
 	return (Result);

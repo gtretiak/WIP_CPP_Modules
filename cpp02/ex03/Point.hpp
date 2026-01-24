@@ -11,8 +11,9 @@ class	Point {
 		Point(const float x, const float y);
 		Point(const Point &Another);
 		Point	&operator=(const Point &Another);
-		Fixed	&getX(void);
-		Fixed	&getY(void);
+		Fixed const	&getX(void) const;
+		Fixed const	&getY(void) const;
+		bool	operator==(const Point &Another) const;
 		~Point();
 };
 

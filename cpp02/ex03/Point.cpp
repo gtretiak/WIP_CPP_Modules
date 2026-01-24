@@ -14,21 +14,25 @@ Point::Point(const Point &Another) : x_(Another.x_), y_(Another.y_) {
 }
 
 Point	&Point::operator=(const Point &Another) {
-	std::cout << "\"Point\" copy assignment operator called" << std::endl;
-	this->x_ = Another.x_;
-	this->y_ = Another.y_;
+	std::cout << "\"Point\" copy assignment operator called\n";
+	std::cout << "Warning: const point can't be reassigned! ";
+	std::cout << "Returning initial object." << std::endl;
+	(void)Another;
 	return (*this);
 }
 
-Fixed	&Point::getX(void) {
+Fixed const	&Point::getX(void) const {
 	return (this->x_);
 }
-Fixed	&Point::getY(void) {
+Fixed const	&Point::getY(void) const {
 	return (this->y_);
+}
+
+bool	Point::operator==(const Point &Another) const {
+	return ((this->x_ == Another.getX())
+		&& (this->y_ == Another.getY()));
 }
 
 Point::~Point() {
 	std::cout << "\"Point\" destructor called" << std::endl;
 }
-
-#endif
