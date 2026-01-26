@@ -9,6 +9,8 @@
 class	DiamondTrap : public ScavTrap, FlagTrap {
 	private:
 		std::string	name_;
+	public:
+		void	whoAmI();
 };
 
 #endif
