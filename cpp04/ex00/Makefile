@@ -1,12 +1,12 @@
 NAME = pets
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRC = main.cpp Animal.class.cpp Dog.class.cpp Cat.class.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ = $(addprefix ./, $(SRC:.cpp=.o))
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@c++ $(OBJ) - o $(NAME)
+	@c++ $(OBJ) -o $(NAME)
 
 %.o: %.cpp
 	@c++ $(FLAGS) -c $< -o $@

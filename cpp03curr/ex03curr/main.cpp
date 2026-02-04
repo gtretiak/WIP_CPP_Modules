@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
-#include "DiamondTrap"
+#include "DiamondTrap.hpp"
 #include <string>
 #include <iostream>
 
