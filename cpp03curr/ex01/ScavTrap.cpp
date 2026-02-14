@@ -4,10 +4,11 @@
 #include <iostream>
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+	std::cout << "Derived class " << this->name_ << " constructed.";
 	this->health_ = 100;
 	this->energy_ = 50;
 	this->damage_ = 20;
-	std::cout << "Derived class constructed" << std::endl;
+        std::cout << " HP:" << this->health_ << ", EP:" << this->energy_ << ", DP:" << this->damage_ << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &Another) : ClapTrap(Another) {
@@ -23,11 +24,12 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &Another) {
 
 void	ScavTrap::attack(const std::string &target) {
 	ClapTrap::attack(target);
-	std::cout << "ScavTrap has attack bonus \"Merciless\"" << std::endl;
+	std::cout << "Double attack bonus \"Merciless\"" << std::endl;
+	ClapTrap::attack(target);
 }
 
 void	ScavTrap::guardGate(void) {
-	std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+	std::cout << this->name_ << " is now in Gate keeper mode" << std::endl;
 }
 
 ScavTrap::~ScavTrap() {

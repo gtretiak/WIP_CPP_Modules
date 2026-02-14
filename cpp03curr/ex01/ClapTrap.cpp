@@ -36,7 +36,7 @@ void	ClapTrap::attack(const std::string &target) {
 		std::cout << " has no HP to continue the fight." << std::endl;
 		return ;
 	}
-	std::cout << " draws aggro (damage increased) and attacks " << target << ", causing " << this->damage_ + 10 << " points of damage (mitigated though).";
+	std::cout << " draws aggro and attacks " << target << ", causing " << this->damage_ << " points of damage.";
 	this->energy_--;
 	std::cout << " EP:" << this->energy_ << std::endl;
 }
