@@ -12,7 +12,7 @@ ClapTrap::ClapTrap(const ClapTrap &Another) : name_(Another.name_), health_(Anot
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &Another) {
-	std::cout << "Robot " << this->name_ << " is re-sleevng into ";
+	std::cout << "Robot " << this->name_ << " is re-sleeving into ";
 	if (this != &Another)
 	{
 		this->name_ = Another.name_;
@@ -36,7 +36,7 @@ void	ClapTrap::attack(const std::string &target) {
 		std::cout << " has no HP to continue the fight." << std::endl;
 		return ;
 	}
-	std::cout << " draws aggro (damage increased) and attacks " << target << ", causing " << this->damage_ + 10 << " points of damage (mitigated though).";
+	std::cout << " attacks " << target << ", causing " << this->damage_ << " points of damage.";
 	this->energy_--;
 	std::cout << " EP:" << this->energy_ << std::endl;
 }
