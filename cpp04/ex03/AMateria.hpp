@@ -5,7 +5,7 @@
 
 class	AMateria {
 	protected:
-		std::string const	type_; //const or not
+		std::string	type_;
 	public:
 		AMateria();
 		AMateria(std::string const &type);

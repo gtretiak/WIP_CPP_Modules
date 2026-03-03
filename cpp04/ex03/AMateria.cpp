@@ -8,7 +8,7 @@ AMateria::AMateria() : type_("Raw") {
 }
 
 AMateria::AMateria(std::string const &type) : type_(type) {
-	std::cout << "AMateria type \"" << type << "\" built" << std::endl;
+	std::cout << "AMateria type \"" << this->type_ << "\" built" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &Another) : type_(Another.type_) {
@@ -17,7 +17,7 @@ AMateria::AMateria(const AMateria &Another) : type_(Another.type_) {
 
 AMateria	&AMateria::operator=(const AMateria &Another) {
 	if (this != &Another)
-		this->type_ = Another.type_;//works if not const only
+		this->type_ = Another.type_;
 	std::cout << "AMateria copy built" << std::endl;
 	return (*this);
 }
@@ -31,5 +31,5 @@ void	AMateria::use(ICharacter &target) {
 }
 
 AMateria::~AMateria() {
-	std::cout << "AMateria built" << std::endl;
+	std::cout << "AMateria destroyed" << std::endl;
 }
