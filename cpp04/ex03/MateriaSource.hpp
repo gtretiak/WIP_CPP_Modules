@@ -4,16 +4,16 @@
 #include "IMateriaSource.hpp"
 #include <string>
 
-class	MateriaSource : IMateriaSource {
+class	MateriaSource : public IMateriaSource {
 private:
-	AMateria	*templates[4];
+	AMateria	*templates_[4];
 public:
 	MateriaSource();
 	MateriaSource(const MateriaSource &Another);
 	MateriaSource	&operator=(const MateriaSource &Another);
 	void		learnMateria(AMateria *);
 	AMateria	*createMateria(std::string const &type);
-	~IMateriaSource();
+	~MateriaSource();
 };
 
 #endif

@@ -1,6 +1,8 @@
 #include "Cure.hpp"
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 Cure::Cure() : AMateria("cure") {
 	std::cout << "Cure built" << std::endl;
@@ -17,7 +19,7 @@ Cure	&Cure::operator=(const Cure &Another) {
 	return (*this);
 }
 
-AMateria	&Cure::clone() const {
+AMateria	*Cure::clone() const {
 	return (new Cure());
 }
 

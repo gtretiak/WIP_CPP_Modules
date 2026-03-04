@@ -27,6 +27,7 @@ std::string const	&AMateria::getType() const {
 }
 
 void	AMateria::use(ICharacter &target) {
+	(void)target;
 	std::cout << "Materia not set (can't use)" << std::endl;
 }
 

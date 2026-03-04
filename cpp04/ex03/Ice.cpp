@@ -1,6 +1,8 @@
 #include "Ice.hpp"
 #include <iostream>
 #include <string>
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 Ice::Ice() : AMateria("ice") {
 	std::cout << "Ice built" << std::endl;
@@ -17,7 +19,7 @@ Ice	&Ice::operator=(const Ice &Another) {
 	return (*this);
 }
 
-AMateria	&Ice::clone() const {
+AMateria	*Ice::clone() const {
 	return (new Ice());
 }
 
