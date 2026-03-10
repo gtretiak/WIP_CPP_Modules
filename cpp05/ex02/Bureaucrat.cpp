@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat() : name_("unnamed"), grade_(150) {
 	std::cout << "Bureaucrat " << this->name_ << " with default grade " << this->grade_ << " hired" << std::endl;
@@ -60,7 +60,7 @@ void		Bureaucrat::decrementGrade() {
 	this->grade_++;
 }
 
-void		Bureaucrat::signForm(Form &obj) {
+void		Bureaucrat::signForm(AForm &obj) {
 	try {
 		obj.beSigned(*this);
 		std::cout << "Bureaucrat " << this->name_ << " signed form-" << obj.getName() << std::endl;
@@ -70,7 +70,7 @@ void		Bureaucrat::signForm(Form &obj) {
 	}
 }
 
-void		Bureaucrat::executeForm(Form const &form) {
+void		Bureaucrat::executeForm(AForm const &form) const {
 	try {
 		form.execute(*this);
 		std::cout << "Bureaucrat " << this->name_ << " executes form-" << form.getName() << std::endl;

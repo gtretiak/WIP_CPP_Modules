@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-class	Form;
+class	AForm;
 
 class	Bureaucrat {
 	private:
@@ -26,8 +26,8 @@ class	Bureaucrat {
 		int			getGrade() const;
 		void			incrementGrade();
 		void			decrementGrade();
-		void			signForm(Form &obj);
-		void			executeForm(Form const &form);
+		void			signForm(AForm &obj);
+		void			executeForm(AForm const &form) const;
 		~Bureaucrat();
 };
 
