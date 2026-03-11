@@ -12,17 +12,19 @@ class	AForm {
 		bool			isSigned_;
 		const int		signGrade_;
 		const int		execGrade_;
+	protected:
+		virtual void	execute2() const = 0;
 	public:
 		AForm();
 		AForm(std::string name, int toSign, int toExec);
-		AForm(const Form &Another);
+		AForm(const AForm &Another);
 		AForm	&operator=(const AForm &Another);
 		std::string	getName() const;
 		bool		getStatus() const;
 		int		getGradeToSign() const;
 		int		getGradeToExec() const;
 		void		beSigned(Bureaucrat &obj);
-		virtual void	execute(Bureaucrat const &executor) const = 0;
+		void		execute(Bureaucrat const &executor) const;
 		class	SignedException : public std::exception {
 			public:
 				const char *what() const throw();

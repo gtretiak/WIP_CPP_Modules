@@ -64,20 +64,15 @@ void	AForm::beSigned(Bureaucrat &obj) {
 		throw GradeTooLowException();
 }
 
-/*void	AForm::execute(Bureaucrat const &executor) const {
+void	AForm::execute(Bureaucrat const &executor) const {
 	if (this->isSigned_ == true)
 		throw SignedException();
-	else if (executor.getGrade() <= this->execGrade_)
-		this->isSigned_ = true;
-	else
+	else if (executor.getGrade() > this->execGrade_)
 		throw GradeTooLowException();
+	this->isSigned_ = true;
+	execute2();
 }
-TODO
-fstream
-.c_str()
-protected pure virtual const action()
 
-*/
 AForm::~AForm() {
 	std::cout << "AForm-" << this->name_ << ". Grade to sign: " << this->signGrade_ << ", to execute: " << this->execGrade_ << ", signed: " << std::boolalpha << this->isSigned_ << " was shredered" << std::endl;
 }
