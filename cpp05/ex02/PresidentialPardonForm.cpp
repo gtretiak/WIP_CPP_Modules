@@ -21,9 +21,9 @@ PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 void	PresidentialPardonForm::execute2() const {
-	std::cout << this->target_ << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	std::cout << "Execution: " << this->target_ << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << "Presidential form " << AForm::getName() << ". Grade to sign: " << AForm::getGradeToSign() << ", to execute: " << AForm::getGradeToExec() << ", signed: " << std::boolalpha << AForm::getStatus() << " was shredered" << std::endl;
+	std::cout << "Presidential form " << AForm::getName() << ". Grade to sign: " << AForm::getGradeToSign() << ", to execute: " << AForm::getGradeToExec() << ", signed: (" << std::boolalpha << AForm::getStatus() << ") - was shredered" << std::endl;
 }

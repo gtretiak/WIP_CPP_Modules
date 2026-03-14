@@ -54,7 +54,7 @@ const char	*AForm::GradeTooLowException::what() const throw() {
 }
 
 const char	*AForm::SignedException::what() const throw() {
-	return ("AForm has been signed by previous bureaucrat!");
+	return ("AForm hasn't been signed yet (No bureaucrat would ever execute an unsigned form!");
 }
 
 void	AForm::beSigned(Bureaucrat &obj) {
@@ -65,16 +65,15 @@ void	AForm::beSigned(Bureaucrat &obj) {
 }
 
 void	AForm::execute(Bureaucrat const &executor) const {
-	if (this->isSigned_ == true)
+	if (this->isSigned_ == false)
 		throw SignedException();
 	else if (executor.getGrade() > this->execGrade_)
 		throw GradeTooLowException();
-	this->isSigned_ = true;
 	execute2();
 }
 
 AForm::~AForm() {
-	std::cout << "AForm-" << this->name_ << ". Grade to sign: " << this->signGrade_ << ", to execute: " << this->execGrade_ << ", signed: " << std::boolalpha << this->isSigned_ << " was shredered" << std::endl;
+	std::cout << "AForm-" << this->name_ << ". Grade to sign: " << this->signGrade_ << ", to execute: " << this->execGrade_ << ", signed: (" << std::boolalpha << this->isSigned_ << ") - was shredered" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &os, AForm &obj) {
