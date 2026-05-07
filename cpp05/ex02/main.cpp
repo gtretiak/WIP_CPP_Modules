@@ -12,7 +12,7 @@ int	main(void) {
 	try {
 		Bureaucrat	a("Alice", 44);
 		Bureaucrat	b("Bob", 3);
-		Bureaucrat	c("Carten", 140);
+		Bureaucrat	c("Carten", 130);
 		ShrubberyCreationForm	tree("garden");
 		RobotomyRequestForm	robocop("cop");
 		PresidentialPardonForm	pardon("Bony");

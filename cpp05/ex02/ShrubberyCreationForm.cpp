@@ -23,10 +23,10 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::execute2() const {
 	std::cout << "Execution: file creating..." << std::endl;
-	std::ofstream	outfile((this->target_ + "_shrubbery").c_str());
+	std::ofstream	outfile((this->target_ + "_shrubbery.txt").c_str());
 	if (!outfile)
 		return ;
-	outfile << "   /\\\n  /**\\\n /****\\\n/******\\\n  |||\n";
+	outfile << "   /\\\n  /**\\\n /****\\\n/******\\\n   ||\n";
 	std::cout << "File created" << std::endl;
 }
 

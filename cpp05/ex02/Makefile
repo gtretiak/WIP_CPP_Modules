@@ -1,4 +1,4 @@
-NAME = fillingForms
+NAME = FancyForms
 FLAGS = -Wall -Wextra -Werror -g -std=c++98
 SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ = $(addprefix ./, $(SRC:.cpp=.o))
@@ -18,5 +18,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf *.txt
 
 re: fclean all
