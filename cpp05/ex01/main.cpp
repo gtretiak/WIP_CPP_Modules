@@ -6,9 +6,11 @@ int	main(void) {
 	try {
 		//Form	test1("test1", 200, 10);//too low exception
 		//Form	test2("test2", 0, 110);//too high exception
+		std::cout << "Bureaucrat hiring" << std::endl;
 		Bureaucrat	financas("Alice", 100);
 		Bureaucrat	aima("Joana", 60);
 		Bureaucrat	bank("Olga", 140);
+		std::cout << "\nForm creation" << std::endl;
 		Form	blank;
 		Form	mortgage("Mortgage", 145, 135);
 		std::cout << mortgage << std::endl;
@@ -29,6 +31,7 @@ int	main(void) {
 		bank.signForm(modulo1);
 		aima.signForm(modulo1);
 		std::cout << modulo1 << std::endl;
+		std::cout << "\nStack cleaning" << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;

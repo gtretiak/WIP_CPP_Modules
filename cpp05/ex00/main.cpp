@@ -5,6 +5,7 @@ int	main(void) {
 	try {
 		//Bureaucrat	test1("test1", 200);//too low exception
 		//Bureaucrat	test2("test2", 0);//too high exception
+		std::cout << "Bureaucrat hiring" << std::endl;
 		Bureaucrat	n;
 		std::cout << n << std::endl;
 
@@ -35,6 +36,7 @@ int	main(void) {
 		std::cout << "incrementing grade" << std::endl;
 		d.incrementGrade();
 		std::cout << d << std::endl;
+		std::cout << "\nStack cleaning" << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
