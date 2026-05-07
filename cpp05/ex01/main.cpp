@@ -4,8 +4,8 @@
 
 int	main(void) {
 	try {
-		//Form	test1("test1", 200, 10);
-		//Form	test2("test2", 0, 110);
+		//Form	test1("test1", 200, 10);//too low exception
+		//Form	test2("test2", 0, 110);//too high exception
 		Bureaucrat	financas("Alice", 100);
 		Bureaucrat	aima("Joana", 60);
 		Bureaucrat	bank("Olga", 140);
